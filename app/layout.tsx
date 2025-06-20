@@ -20,6 +20,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Nusa Academy",
   description: "Platform belajar online untuk masa depan.",
+  icons: "/icon.png",
 };
 
 export default function RootLayout({

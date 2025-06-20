@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#problem-statement", label: "Masalah" },
@@ -30,8 +31,25 @@ export default function Header() {
       )}
     >
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="text-2xl font-bold font-primary text-primary">
-          NusaAcademy
+        <Link
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          <div className="flex justify-center items-center">
+            <Image
+              src={"/logo.png"}
+              alt="nusa academy"
+              width={50}
+              height={50}
+            />
+
+            <h1 className="text-2xl font-bold font-primary text-primary">
+              NusaAcademy
+            </h1>
+          </div>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
