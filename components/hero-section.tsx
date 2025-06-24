@@ -4,60 +4,69 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "./ui/button";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
-};
+// Varian animasi tetap sama, tidak perlu diubah
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="container min-h-screen pt-40 pb-20">
+    <section id="hero" className="container min-h-[90vh] pt-40 pb-20">
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-xl items-center"
-        variants={containerVariants}
         initial="hidden"
         animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+        }}
       >
         <div className="text-center md:text-left">
           <motion.h1
-            variants={itemVariants}
-            className="text-h1 font-primary text-text-primary"
+            variants={{
+              hidden: { y: 20, opacity: 0 },
+              visible: { y: 0, opacity: 1 },
+            }}
+            className="text-h1 font-primary text-text-primary leading-tight"
           >
-            Buka Potensi Karir Digital Anda, Hari Ini.
+            Bangun Masa Depan Digital Indonesia, Mulai dari Anda.
           </motion.h1>
           <motion.p
-            variants={itemVariants}
+            variants={{
+              hidden: { y: 20, opacity: 0 },
+              visible: { y: 0, opacity: 1 },
+            }}
             className="mt-4 text-subheadline text-text-secondary"
           >
-            Nusa Academy adalah platform kursus online yang dirancang untuk
-            membekali Anda dengan keahlian teknologi paling dicari di industri.
+            Platform pelatihan digital untuk mahasiswa, profesional, dan pelaku
+            bisnis yang siap meningkatkan keahlian dan bersaing di panggung
+            global.
           </motion.p>
           <motion.div
-            variants={itemVariants}
+            variants={{
+              hidden: { y: 20, opacity: 0 },
+              visible: { y: 0, opacity: 1 },
+            }}
             className="mt-xl flex flex-col sm:flex-row gap-md justify-center md:justify-start"
           >
-            <Button size="lg">Mulai Belajar</Button>
+            <Button size="lg">Jelajahi Kursus</Button>
             <Button size="lg" variant="secondary">
-              Lihat Kurikulum
+              Tentang Kami
             </Button>
           </motion.div>
         </div>
-        <motion.div variants={itemVariants} className="mt-8 md:mt-0">
+        <motion.div
+          variants={{
+            hidden: { y: 20, opacity: 0 },
+            visible: { y: 0, opacity: 1 },
+          }}
+          className="mt-8 md:mt-0"
+        >
           <div className="w-full overflow-hidden rounded-lg shadow-lg">
             <Image
-              src="/hero.webp" // Ganti dengan path gambar yang sesuai
-              alt="Siswa sedang belajar di Nusa Academy"
-              width={600}
-              height={450}
-              className="w-full h-full object-cover animate-zoom-in"
+              src="/hero.webp" // Ganti dengan path gambar yang sesuai (bisa tetap gambar UMKM atau gambar yang lebih umum)
+              alt="Talenta digital Indonesia sedang belajar dan berkembang"
+              width={1600}
+              height={900}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-full object-cover"
               priority
             />
           </div>

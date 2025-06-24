@@ -1,3 +1,4 @@
+import CourseSection from "@/components/course-section";
 import FinalCtaSection from "@/components/final-cta-section";
 import HeroSection from "@/components/hero-section";
 
@@ -11,6 +12,7 @@ export default function HomePage() {
       <HeroSection />
       <ProblemSection />
       <SolutionSection />
+      <CourseSection />
       <TestimonialsSection />
       <FinalCtaSection />
     </>
