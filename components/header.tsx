@@ -9,6 +9,7 @@ import Image from "next/image";
 const navLinks = [
   { href: "#problem-statement", label: "Masalah" },
   { href: "#solution-showcase", label: "Solusi" },
+  { href: "#courses", label: "Kursus" },
   { href: "#testimonials", label: "Testimoni" },
 ];
 
