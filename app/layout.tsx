@@ -37,9 +37,7 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        <Header />
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );

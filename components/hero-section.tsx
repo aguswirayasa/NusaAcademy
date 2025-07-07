@@ -19,46 +19,22 @@ export default function HeroSection() {
         }}
       >
         <div className="text-center md:text-left">
-          <motion.h1
-            variants={{
-              hidden: { y: 20, opacity: 0 },
-              visible: { y: 0, opacity: 1 },
-            }}
-            className="text-h1 font-primary text-text-primary leading-tight"
-          >
+          <h1 className="text-h1 font-primary text-text-primary leading-tight">
             Bangun Masa Depan Digital Indonesia, Mulai dari Anda.
-          </motion.h1>
-          <motion.p
-            variants={{
-              hidden: { y: 20, opacity: 0 },
-              visible: { y: 0, opacity: 1 },
-            }}
-            className="mt-4 text-subheadline text-text-secondary"
-          >
+          </h1>
+          <p className="mt-4 text-subheadline text-text-secondary">
             Platform pelatihan digital untuk mahasiswa, profesional, dan pelaku
             bisnis yang siap meningkatkan keahlian dan bersaing di panggung
             global.
-          </motion.p>
-          <motion.div
-            variants={{
-              hidden: { y: 20, opacity: 0 },
-              visible: { y: 0, opacity: 1 },
-            }}
-            className="mt-xl flex flex-col sm:flex-row gap-md justify-center md:justify-start"
-          >
+          </p>
+          <div className="mt-xl flex flex-col sm:flex-row gap-md justify-center md:justify-start">
             <Button size="lg">Jelajahi Kursus</Button>
             <Button size="lg" variant="secondary">
               Tentang Kami
             </Button>
-          </motion.div>
+          </div>
         </div>
-        <motion.div
-          variants={{
-            hidden: { y: 20, opacity: 0 },
-            visible: { y: 0, opacity: 1 },
-          }}
-          className="mt-8 md:mt-0"
-        >
+        <div className="mt-8 md:mt-0">
           <div className="w-full overflow-hidden rounded-lg shadow-lg">
             <Image
               src="/hero.webp" // Ganti dengan path gambar yang sesuai (bisa tetap gambar UMKM atau gambar yang lebih umum)
@@ -70,7 +46,7 @@ export default function HeroSection() {
               priority
             />
           </div>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

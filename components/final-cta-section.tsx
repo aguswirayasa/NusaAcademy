@@ -7,12 +7,7 @@ export default function FinalCtaSection() {
   return (
     <section id="final-cta" className="py-xxl text-center">
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           <h2 className="text-h2 font-primary text-text-primary">
             Siap Mengambil Langkah Berikutnya?
           </h2>
@@ -22,17 +17,13 @@ export default function FinalCtaSection() {
             menit.
           </p>
           <div className="mt-xl">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
+            <div>
               <Button size="lg" variant="primary">
                 Daftar Sekarang, Gratis!
               </Button>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

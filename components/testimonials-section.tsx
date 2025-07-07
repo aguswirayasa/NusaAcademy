@@ -38,34 +38,46 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="py-xxl bg-primary text-white">
       <div className="container">
         <h2 className="text-h2 font-primary text-center">
-          Apa Kata Alumni Kami
+          Pengalaman Para Peserta Kami
         </h2>
         <Carousel
           opts={{ align: "start", loop: true }}
-          className="w-full max-w-4xl mx-auto mt-12"
+          // Meningkatkan max-width agar carousel terlihat lebih besar
+          className="w-full max-w-5xl mx-auto mt-12 relative"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-6">
+            {" "}
+            {/* Menyesuaikan margin untuk item */}
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <div className="bg-white/10 p-lg rounded-lg h-full flex flex-row items-center text-left gap-6">
+              <CarouselItem
+                key={index}
+                className="pl-6 basis-full md:basis-1/2"
+              >
+                {" "}
+                {/* Padding item dan lebar responsif */}
+                <div className="p-1 h-full">
+                  {" "}
+                  {/* Padding kecil untuk border radius visual */}
+                  <div className="bg-white/10 p-lg rounded-lg h-full flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 shadow-md">
                     <div className="flex-shrink-0">
                       <Image
                         src={testimonial.avatar}
                         alt={testimonial.name}
-                        width={80}
-                        height={80}
-                        className="rounded-full border-4 border-accent"
+                        width={96} // Ukuran avatar sedikit lebih besar
+                        height={96}
+                        className="rounded-full border-4 border-accent object-cover h-24 w-24"
                       />
                     </div>
                     <div className="flex-1">
-                      <blockquote className="text-lg italic text-slate-200">
+                      {/* Ukuran kutipan lebih besar dan warna putih penuh */}
+                      <blockquote className="text-xl italic text-white leading-relaxed">
                         "{testimonial.quote}"
                       </blockquote>
                       <cite className="mt-4 block font-bold not-italic">
                         {testimonial.name}
                       </cite>
-                      <p className="text-sm text-slate-300">
+                      {/* Warna text title slightly lighter */}
+                      <p className="text-sm text-white/80">
                         {testimonial.title}
                       </p>
                     </div>
@@ -74,8 +86,9 @@ export default function TestimonialsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-[-50px] bg-white/20 text-white hover:bg-white/30 border-none" />
-          <CarouselNext className="right-[-50px] bg-white/20 text-white hover:bg-white/30 border-none" />
+          {/* Tombol navigasi lebih kontras dan menonjol */}
+          <CarouselPrevious className="left-[-20px] md:left-[-50px] bg-white text-primary hover:bg-gray-100 border-none shadow-md" />
+          <CarouselNext className="right-[-20px] md:right-[-50px] bg-white text-primary hover:bg-gray-100 border-none shadow-md" />
         </Carousel>
       </div>
     </section>

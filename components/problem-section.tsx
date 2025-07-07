@@ -8,19 +8,19 @@ const problems = [
     icon: BarChart4,
     title: "Kesenjangan Keterampilan (Skills Gap)",
     description:
-      "Lulusan baru dan profesional kesulitan mengejar kecepatan perubahan teknologi yang dibutuhkan industri.",
+      "Perubahan teknologi yang sangat cepat membuat banyak profesional dan lulusan baru kesulitan memiliki skill yang sesuai dengan kebutuhan industri saat ini.",
   },
   {
     icon: BookX,
     title: "Kurikulum Tidak Relevan",
     description:
-      "Banyak lembaga pendidikan yang teoritis dan tidak mengajarkan keterampilan praktis yang siap pakai di dunia kerja.",
+      "Banyak program pendidikan yang masih menggunakan pendekatan lama dan tidak mengajarkan keterampilan yang langsung applicable di workplace modern.",
   },
   {
     icon: Globe,
     title: "Akses Pelatihan Terbatas",
     description:
-      "Keterbatasan geografis dan biaya menjadi penghalang untuk mendapatkan pendidikan digital berkualitas.",
+      "Hambatan geografis dan biaya yang tidak terjangkau membuat kesempatan pengembangan skill digital berkualitas menjadi privilege yang tidak semua orang bisa akses.",
   },
 ];
 
@@ -34,27 +34,15 @@ export default function ProblemSection() {
           Menjawab Tantangan Era Digital
         </h2>
         <p className="mt-4 max-w-3xl mx-auto text-subheadline text-text-secondary">
-          Kami memahami rintangan yang Anda hadapi. Itulah mengapa kami ada
-          untuk memberikan solusi nyata.
+          Kami menyadari bahwa ada gap besar antara kebutuhan industri dengan
+          keterampilan yang tersedia. Kami hadir untuk menjembatani kesenjangan
+          ini.
         </p>
 
-        <motion.div
-          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-lg"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
-          }}
-        >
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-lg">
           {problems.map((problem, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1 },
-              }}
               className="bg-white p-lg rounded-lg shadow-md transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg"
             >
               <problem.icon className="h-12 w-12 text-primary mx-auto" />
@@ -62,9 +50,9 @@ export default function ProblemSection() {
                 {problem.title}
               </h4>
               <p className="mt-2 text-body">{problem.description}</p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
